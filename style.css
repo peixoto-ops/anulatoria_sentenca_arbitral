@@ -153,6 +153,7 @@ a:hover { color: var(--secondary); }
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 500px;
 }
 .pdf-toolbar {
   display: flex;
@@ -185,6 +186,7 @@ a:hover { color: var(--secondary); }
   overflow: auto;
   text-align: center;
   max-width: 100%;
+  width: 100%;
   background: #525659;
   position: relative;
   display: flex;
