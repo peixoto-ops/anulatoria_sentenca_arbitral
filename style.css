@@ -1,0 +1,51 @@
+
+:root {
+  --bg-color: #f7f7f7;
+  --surface-color: #ffffff;
+  --text-primary: #222222;
+  --text-secondary: #555555;
+  --primary: #62a0ea;
+  --secondary: #b38b59;
+  --border: #e5e7eb;
+  --font-title: "Inter", "Montserrat", sans-serif;
+  --font-body: "Source Serif Pro", "Merriweather", serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+h1, h2, h3, h4 { font-family: var(--font-title); color: var(--primary); }
+a { color: var(--primary); text-decoration: none; transition: 0.2s; }
+a:hover { color: var(--secondary); }
+
+.layout { max-width: 1200px; margin: 0 auto; display: flex; min-height: 100vh; }
+.sidebar { width: 300px; padding: 2rem; background: var(--surface-color); border-right: 1px solid var(--border); position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.content { flex: 1; padding: 3rem; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.card { 
+  background: var(--surface-color); 
+  padding: 1.5rem; 
+  border-radius: 4px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+  border-left: 4px solid var(--secondary);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card h3 { margin-top: 0; font-size: 1.2rem; }
+.meta { font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.5rem; }
+
+.item-header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }
+.item-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; background: var(--surface-color); padding: 1.5rem; border-radius: 4px; }
+.label { font-weight: bold; font-family: var(--font-title); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); }
+
+.btn { display: inline-block; padding: 0.5rem 1rem; background: var(--primary); color: #fff; border-radius: 4px; font-family: var(--font-title); font-size: 0.9rem; }
+.btn:hover { background: #133a66; color: #fff; }
+
+.viewer-frame { width: 100%; height: 80vh; border: 1px solid var(--border); background: #eee; }
