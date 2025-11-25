@@ -4,7 +4,7 @@
   --surface-color: #ffffff;
   --text-primary: #222222;
   --text-secondary: #555555;
-  --primary: #26a269;
+  --primary: #1a4f8b;
   --secondary: #b38b59;
   --border: #e5e7eb;
   --font-title: "Inter", "Montserrat", sans-serif;
@@ -138,13 +138,21 @@ a:hover { color: var(--secondary); }
 .btn-outline:hover { background: var(--primary); color: #fff !important; }
 
 /* PDF Viewer */
+.viewer-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 .viewer-container {
-  margin-top: 2rem;
   background: #525659; /* Standard PDF viewer bg */
   padding: 1rem;
   border-radius: 6px;
   box-shadow: var(--shadow);
   color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .pdf-toolbar {
   display: flex;
@@ -156,6 +164,10 @@ a:hover { color: var(--secondary); }
   border-radius: 4px;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .pdf-toolbar button {
   background: #444;
@@ -172,13 +184,18 @@ a:hover { color: var(--secondary); }
 .canvas-wrapper {
   overflow: auto;
   text-align: center;
-  max-height: 800px;
+  max-width: 100%;
   background: #525659;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
 }
 #the-canvas {
   direction: ltr;
   max-width: 100%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: block;
 }
 
 /* Footer */

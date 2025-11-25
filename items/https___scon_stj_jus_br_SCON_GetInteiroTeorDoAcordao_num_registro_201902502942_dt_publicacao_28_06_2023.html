@@ -10,9 +10,12 @@
   <!-- PDF.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    // Initialize PDF.js Worker
-    var pdfjsLib = window['pdfjs-dist/build/pdf'];
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    // Robust PDF.js Initialization
+    window.onload = function() {
+       if (window.pdfjsLib) {
+         window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+       }
+    };
   </script>
 </head>
 <body>
@@ -28,7 +31,7 @@
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
         
-        <!-- Curator Info Moved Here -->
+        <!-- Curator Info -->
         <div class="curator-card">
           <div class="curator-text">
             <strong>Curadoria do conteúdo</strong><br/>
@@ -75,7 +78,7 @@
                 https://scon.stj.jus.br/SCON/GetInteiroTeorDoAcordao?num_registro=201902502942&dt_publicacao=28/06/2023
             
         " target="_blank" class="btn btn-outline">
-               <i data-lucide="external-link" size="16"></i> Link Fonte
+               <i data-lucide="external-link" size="16"></i> Link Fonte Original
              </a>
         </div>
       </div>
