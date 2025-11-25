@@ -3,55 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MINISTRA NANCY ANDRIGHI | Biblioteca Jurídica</title>
+  <title>MINISTRA NANCY ANDRIGHI | JurisLib</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i data-lucide="moon" id="theme-icon"></i>
+  </button>
+
   <div class="layout">
-    <aside class="sidebar">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="margin:0;">JurisLib</h2>
-        <p style="margin:0; font-size: 0.9rem; color: var(--text-secondary);">Biblioteca Digital</p>
-      </div>
-      <nav>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="../index.html">Início</a></li>
-          <!-- Categories could be generated here -->
-        </ul>
-      </nav>
-      <div style="margin-top: 2rem;">
-         <input type="text" id="search" placeholder="Buscar..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px;">
-      </div>
-    </aside>
-    <main class="content">
-      
+    <div class="main-container">
+      <aside class="sidebar">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
+          <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
+        </div>
+        <nav>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top: 2rem;">
+           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
+        </div>
+      </aside>
+      <main class="content">
+        
       <div class="item-header">
-        <a href="../index.html" style="font-size: 0.9rem;">&larr; Voltar</a>
-        <h1 style="margin-top: 0.5rem;">MINISTRA NANCY ANDRIGHI</h1>
+        <a href="../index.html" style="font-size: 0.9rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+          <i data-lucide="arrow-left" size="16"></i> Voltar para o índice
+        </a>
+        <h1 style="margin-top: 0.5rem; line-height: 1.2;">MINISTRA NANCY ANDRIGHI</h1>
+        
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+           <button onclick="copyCitation('ANDRIGHI, Nancy. **MINISTRA NANCY ANDRIGHI**. 2021. Acesso em: 25/11/2025.')" class="btn">
+             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+           </button>
+           
+        </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo</div><div>Document</div></div>
+        <div><div class="label">Tipo de Documento</div><div>Document</div></div>
         <div><div class="label">Data</div><div>2021-04-15</div></div>
-        <div><div class="label">Autores</div><div>Andrighi</div></div>
-        <div><div class="label">Fonte</div><div>-</div></div>
+        <div><div class="label">Autores</div><div>Andrighi, Nancy</div></div>
+        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
       </div>
 
       
-        <div style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-          <h3 style="margin-top: 0;">Resumo / Ementa</h3>
-          <p>A eficácia da sentença arbitral como título executivo judicial e a delimitação temporal para sua contestação judicial representam um ponto crítico na aplicação da Lei de Arbitragem (Lei 9.307/96). O presente estudo objetivou analisar a aplicação do prazo decadencial de 90 dias, previsto no art. 33, § 1º, da Lei 9.307/96, às alegações de nulidade da sentença arbitral suscitadas em sede de impugnação ao cumprimento de sentença (art. 525 do CPC/15). A pesquisa foi conduzida mediante a análise de um Recurso Especial no Superior Tribunal de Justiça, com foco na interpretação sistemática dos artigos 32 e 33 da Lei de Arbitragem e do rol taxativo de matérias de defesa estabelecido no art. 525, § 1º, do Código de Processo Civil. Verificou-se que, se a execução for ajuizada após o decurso do prazo decadencial para a ação anulatória, a defesa da parte executada fica limitada estritamente às matérias processuais previstas no art. 525, § 1º, do CPC, sendo vedada a invocação de nulidade da sentença com base nos vícios definidos no art. 32 da Lei 9.307/96. Na hipótese analisada, a impugnação foi rejeitada por decadência, dado que a matéria suscitada (cerceamento de defesa) não constava no rol do CPC. Concluiu-se que o prazo decadencial imposto à ação anulatória possui eficácia limitadora sobre as defesas posteriores, reforçando a segurança jurídica e a estabilidade dos títulos executivos arbitrais.
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <p style="margin-top: 1rem; text-align: justify;">A eficácia da sentença arbitral como título executivo judicial e a delimitação temporal para sua contestação judicial representam um ponto crítico na aplicação da Lei de Arbitragem (Lei 9.307/96). O presente estudo objetivou analisar a aplicação do prazo decadencial de 90 dias, previsto no art. 33, § 1º, da Lei 9.307/96, às alegações de nulidade da sentença arbitral suscitadas em sede de impugnação ao cumprimento de sentença (art. 525 do CPC/15). A pesquisa foi conduzida mediante a análise de um Recurso Especial no Superior Tribunal de Justiça, com foco na interpretação sistemática dos artigos 32 e 33 da Lei de Arbitragem e do rol taxativo de matérias de defesa estabelecido no art. 525, § 1º, do Código de Processo Civil. Verificou-se que, se a execução for ajuizada após o decurso do prazo decadencial para a ação anulatória, a defesa da parte executada fica limitada estritamente às matérias processuais previstas no art. 525, § 1º, do CPC, sendo vedada a invocação de nulidade da sentença com base nos vícios definidos no art. 32 da Lei 9.307/96. Na hipótese analisada, a impugnação foi rejeitada por decadência, dado que a matéria suscitada (cerceamento de defesa) não constava no rol do CPC. Concluiu-se que o prazo decadencial imposto à ação anulatória possui eficácia limitadora sobre as defesas posteriores, reforçando a segurança jurídica e a estabilidade dos títulos executivos arbitrais.
 
 **Palavras-chave:** Sentença Arbitral. Prazo Decadencial. Impugnação ao Cumprimento. Lei de Arbitragem. Segurança Jurídica.</p>
         </div>
       
 
       
+
+      
     
-    </main>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
+    </footer>
   </div>
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+    
+    // Dark Mode Logic
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    }
+    
+    function updateIcon() {
+      const icon = document.getElementById('theme-icon');
+      if(document.body.classList.contains('dark')) {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    updateIcon();
+
+    // Search Logic (Simple client-side)
+    function filterList() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText;
+        if (title.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+
+    // Citation Logic
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Referência ABNT copiada para a área de transferência!');
+      });
+    }
+  </script>
 </body>
 </html>

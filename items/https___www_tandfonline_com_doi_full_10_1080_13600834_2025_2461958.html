@@ -3,55 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws | Biblioteca Jurídica</title>
+  <title>No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws | JurisLib</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i data-lucide="moon" id="theme-icon"></i>
+  </button>
+
   <div class="layout">
-    <aside class="sidebar">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="margin:0;">JurisLib</h2>
-        <p style="margin:0; font-size: 0.9rem; color: var(--text-secondary);">Biblioteca Digital</p>
-      </div>
-      <nav>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="../index.html">Início</a></li>
-          <!-- Categories could be generated here -->
-        </ul>
-      </nav>
-      <div style="margin-top: 2rem;">
-         <input type="text" id="search" placeholder="Buscar..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px;">
-      </div>
-    </aside>
-    <main class="content">
-      
+    <div class="main-container">
+      <aside class="sidebar">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
+          <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
+        </div>
+        <nav>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top: 2rem;">
+           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
+        </div>
+      </aside>
+      <main class="content">
+        
       <div class="item-header">
-        <a href="../index.html" style="font-size: 0.9rem;">&larr; Voltar</a>
-        <h1 style="margin-top: 0.5rem;">No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws</h1>
+        <a href="../index.html" style="font-size: 0.9rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+          <i data-lucide="arrow-left" size="16"></i> Voltar para o índice
+        </a>
+        <h1 style="margin-top: 0.5rem; line-height: 1.2;">No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws</h1>
+        
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+           <button onclick="copyCitation('SANTOS, Cristiana. **No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws**. 2025. Disponível em: <
+            
+                https://www.tandfonline.com/doi/full/10.1080/13600834.2025.2461958
+            
+        >. Acesso em: 25/11/2025.')" class="btn">
+             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+           </button>
+           
+             <a href="
+            
+                https://www.tandfonline.com/doi/full/10.1080/13600834.2025.2461958
+            
+        " target="_blank" class="btn btn-outline">
+               <i data-lucide="external-link" size="16"></i> Ver Fonte Original
+             </a>
+        </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo</div><div>Article</div></div>
+        <div><div class="label">Tipo de Documento</div><div>Article</div></div>
         <div><div class="label">Data</div><div>2025-09-02</div></div>
-        <div><div class="label">Autores</div><div>Santos, Morozovaite, De Conca</div></div>
-        <div><div class="label">Fonte</div><div>-</div></div>
+        <div><div class="label">Autores</div><div>Santos, Cristiana, Morozovaite, Viktorija, De Conca, Silvia</div></div>
+        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
       </div>
 
       
-        <div style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-          <h3 style="margin-top: 0;">Resumo / Ementa</h3>
-          <p>A crescente prevalência de "dark patterns" (padrões obscuros) em interfaces digitais tem sido amplamente investigada empiricamente pela área de Interação Humano-Computador (IHC), mas a conceituação e o tratamento desses danos sob a ótica legal europeia permanecem insuficientes. Este artigo objetivou analisar a extensão em que os danos causados por padrões obscuros são legalmente reconhecíveis e passíveis de reparação no direito da União Europeia (UE). A metodologia empregada consistiu em uma análise aprofundada de 39 fontes (relatórios de políticas e estudos acadêmicos), utilizando o método *snowballing* e a pesquisa doutrinária legal para extrair requisitos de dano em legislações e jurisprudência, culminando na proposição de uma taxonomia de danos em três níveis hierárquicos. Os resultados revelaram uma taxonomia detalhada com 20 tipos de danos (materiais, não materiais, individuais e coletivos). Verificou-se que os danos não materiais individuais formam a maioria dos impactos identificados, mas são os mais difíceis de reparar e comprovar sob o Regulamento Geral sobre a Proteção de Dados (RGPD) e a Diretiva sobre Práticas Comerciais Desleais (UCPD), devido à falta de harmonização e aos altos limiares nacionais. Conclui-se que, embora o novo arcabouço regulatório digital da UE (DSA, DMA, AI Act, Data Act) aborde explicitamente a autonomia do usuário, a reparação efetiva dos danos, especialmente os não materiais, permanece incerta, exigindo maior alinhamento conceitual e processual entre as diversas legislações para garantir a proteção plena dos indivíduos.
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <p style="margin-top: 1rem; text-align: justify;">A crescente prevalência de "dark patterns" (padrões obscuros) em interfaces digitais tem sido amplamente investigada empiricamente pela área de Interação Humano-Computador (IHC), mas a conceituação e o tratamento desses danos sob a ótica legal europeia permanecem insuficientes. Este artigo objetivou analisar a extensão em que os danos causados por padrões obscuros são legalmente reconhecíveis e passíveis de reparação no direito da União Europeia (UE). A metodologia empregada consistiu em uma análise aprofundada de 39 fontes (relatórios de políticas e estudos acadêmicos), utilizando o método *snowballing* e a pesquisa doutrinária legal para extrair requisitos de dano em legislações e jurisprudência, culminando na proposição de uma taxonomia de danos em três níveis hierárquicos. Os resultados revelaram uma taxonomia detalhada com 20 tipos de danos (materiais, não materiais, individuais e coletivos). Verificou-se que os danos não materiais individuais formam a maioria dos impactos identificados, mas são os mais difíceis de reparar e comprovar sob o Regulamento Geral sobre a Proteção de Dados (RGPD) e a Diretiva sobre Práticas Comerciais Desleais (UCPD), devido à falta de harmonização e aos altos limiares nacionais. Conclui-se que, embora o novo arcabouço regulatório digital da UE (DSA, DMA, AI Act, Data Act) aborde explicitamente a autonomia do usuário, a reparação efetiva dos danos, especialmente os não materiais, permanece incerta, exigindo maior alinhamento conceitual e processual entre as diversas legislações para garantir a proteção plena dos indivíduos.
 
 ## **Palavras-chave:** Padrões Obscuros. Dano. Reparação. Direito da UE. RGPD.</p>
         </div>
       
 
       
+
+      
     
-    </main>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
+    </footer>
   </div>
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+    
+    // Dark Mode Logic
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    }
+    
+    function updateIcon() {
+      const icon = document.getElementById('theme-icon');
+      if(document.body.classList.contains('dark')) {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    updateIcon();
+
+    // Search Logic (Simple client-side)
+    function filterList() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText;
+        if (title.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+
+    // Citation Logic
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Referência ABNT copiada para a área de transferência!');
+      });
+    }
+  </script>
 </body>
 </html>

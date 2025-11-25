@@ -3,508 +3,1348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Início | Biblioteca Jurídica</title>
+  <title>Início | JurisLib</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i data-lucide="moon" id="theme-icon"></i>
+  </button>
+
   <div class="layout">
-    <aside class="sidebar">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="margin:0;">JurisLib</h2>
-        <p style="margin:0; font-size: 0.9rem; color: var(--text-secondary);">Biblioteca Digital</p>
-      </div>
-      <nav>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="./index.html">Início</a></li>
-          <!-- Categories could be generated here -->
-        </ul>
-      </nav>
-      <div style="margin-top: 2rem;">
-         <input type="text" id="search" placeholder="Buscar..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px;">
-      </div>
-    </aside>
-    <main class="content">
-      
-    <header style="margin-bottom: 2rem;">
-      <h1>Acervo Jurídico</h1>
-      <p>Total de documentos: 78</p>
+    <div class="main-container">
+      <aside class="sidebar">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
+          <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
+        </div>
+        <nav>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="./index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top: 2rem;">
+           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
+        </div>
+      </aside>
+      <main class="content">
+        
+    <header style="margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Biblioteca</h1>
+      <p style="color: var(--text-secondary);">78 documentos catalogados</p>
     </header>
     <div class="card-grid">
       
-        <article class="card">
-          <span class="meta">Legislation &bull; 1996-09-24</span>
-          <h3><a href="./items/https___www_planalto_gov_br_ccivil_03_leis_l9307_htm.html">Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem</a></h3>
-          <p>Place: Brasília, DF...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Legislation &bull; 2015-03-17</span>
-          <h3><a href="./items/https___www_planalto_gov_br_ccivil_03__ato2015_2018_2015_lei_l13105_htm.html">Lei nº 13.105, de 16 de março de 2015. Código de Processo Civil</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2025-07-25T12:14:00-03:00</span>
-          <h3><a href="./items/https___www_migalhas_com_br_depeso_435468_clausula_arbitral_condicoes_de_eficacia_em_contratos_por_adesao.html">Migalhas</a></h3>
-          <p>A crescente utilização dos contratos de adesão, caracterizados pela ausência de fase pré-negocial e ...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_stj_jus_br_sites_portalp_Paginas_Comunicacao_Noticias_antigas_2017_2017_03_17_09_38_Codigo_de_Defesa_do_Consumidor_nao_se_aplica_aos_contratos_de_locacao_aspx.html">Código de Defesa do Consumidor não se aplica aos contratos de locação</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_stj_jus_br_sites_portalp_Paginas_Comunicacao_Noticias_antigas_2016_2016_10_03_08_06_Terceira_Turma_ve_franquia_como_contrato_de_adesao_e_anula_clausula_de_arbitragem_aspx.html">Terceira Turma vê franquia como contrato de adesão e anula cláusula de arbitragem</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2016-09</span>
-          <h3><a href="./items/_item_639.html">MINISTRA NANCY ANDRIGHI</a></h3>
-          <p>Place: Brasília, DF...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2024-08-07</span>
-          <h3><a href="./items/_item_646.html">Juíza Larissa Gaspar Tunala</a></h3>
-          <p>A crescente digitalização das relações contratuais, especialmente em locações intermediadas por plat...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2017-10</span>
-          <h3><a href="./items/https___dialnet_unirioja_es_descarga_articulo_6463954_pdf.html">Revista de Direito Civil Contemporâneo.</a></h3>
-          <p>A crescente utilização da arbitragem em contratos empresariais, especialmente nos de adesão, levanta...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2023</span>
-          <h3><a href="./items/_item_670.html">A hipervulnerabilidade dos dados dos consumidores no mercado de consumo digital: a autodetermina<span class="nocase">c c a</span>o informativa como um direito fundamental</a></h3>
-          <p>Citation Key: Silva2023...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">BookSection &bull; 2019</span>
-          <h3><a href="./items/_item_678.html">Prote<span class="nocase">c c a</span>o de dados pessoais: a fun<span class="nocase">c c a</span>o e os limites do consentimento</a></h3>
-          <p>Citation Key: Bioni2019...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2025-02</span>
-          <h3><a href="./items/https___scon_stj_jus_br_SCON_GetInteiroTeorDoAcordao_num_registro_202400310111_dt_publicacao_28_02_2025.html">MINISTRO CARLOS CINI MARCHIONATTI DESEMBARGADOR CONVOCADO TJRS)</a></h3>
-          <p>A controvérsia jurídica sobre a aplicação do Código de Defesa do Consumidor (CDC) aos contratos de l...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2023-09-25</span>
-          <h3><a href="./items/_item_684.html">MINISTRO RAUL ARAÚJO</a></h3>
-          <p>A discussão jurídica sobre a extensão da responsabilidade do fiador em contratos de locação predial ...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2021-06-08</span>
-          <h3><a href="./items/_item_689.html">MINISTRO MARCO BUZZI</a></h3>
-          <p>A controvérsia acerca da aplicabilidade do Código de Defesa do Consumidor (CDC) em litígios contratu...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_digital_fairness_act_com_.html">Digital Fairness Act (DFA) | Updates</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/_item_696.html">L9307</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/_item_698.html">L13105</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/_item_700.html">Código de Defesa do Consumidor não se aplica aos contratos de locação</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___scon_stj_jus_br_SCON_pesquisar_jsp_b_ACOR_O_RR_preConsultaPP_5217_2F0_thesaurus_JURIDICO_p_true_tp_T.html">STJ - Jurisprudência do STJ</a></h3>
-          <p>O Superior Tribunal de Justiça é o órgão do Poder Judiciário do Brasil que assegura efetivamente a u...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___scon_stj_jus_br_SCON_pesquisa_pronta_toc_jsp_livre___DOCN__275217_27_.html">STJ - Pesquisa Pronta</a></h3>
-          <p>O Superior Tribunal de Justiça é o órgão do Poder Judiciário do Brasil que assegura efetivamente a u...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___site_mppr_mp_br_meioambiente_Pagina_Direito_Moradia_Jurisprudencia_Comentada.html">MPPR</a></h3>
-          <p>&#1...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1104.html">VULNERABILIDADE DIGITAL DO CONSUMIDOR NOS MODELOS ZERO- PRICE: A (I)LEGALIDADE DA CESSÃO IRRESTRITA DE DADOS PESSOAIS NOS TERMOS DE USO DAS REDES SOCIAIS</a></h3>
-          <p>A crescente essencialidade das redes sociais para o exercício da cidadania e a promoção de direitos ...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1106.html">O PRINCÍPIO DA COOPERAÇÃO COMO NORMA FUNDAMENTAL DO PROCESSO CIVIL E SEUS REFLEXOS NA ARBITRAGEM</a></h3>
-          <p>The understanding and application of the law suffered, over time, significant changes. The ideas pos...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2022</span>
-          <h3><a href="./items/_item_1108.html">civilistica.com</a></h3>
-          <p>A expansão do mercado de consumo para o ambiente digital, marcada pela atuação de grandes plataforma...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Book &bull; 2022-11-29</span>
-          <h3><a href="./items/urn_isbn_978_1_80037_209_2_20978_1_80037_208_5.html">Regulation (EU) No 910/2014 on Electronic Identification and Trust Services for Electronic Transactions in the Internal Market (EIDAS Regulation)</a></h3>
-          <p>DOI: 10.4337/9781800372092.00015...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1117.html">A anulação da sentença arbitral por violação da ordem pública internacional</a></h3>
-          <p>A consagração da violação da ordem pública internacional como fundamento de anulação da sentença arb...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2018</span>
-          <h3><a href="./items/_item_1119.html">O PRINCÍPIO DA CONSERVAÇÃO DO CONTRATO NAS AÇÕES REVISIONAIS  DE CONTRATOS HABITACIONAIS: ANÁLISE DE JULGADOS ENVOLVENDO O  “PROGRAMA MINHA CASA, MINHA VIDA”</a></h3>
-          <p>Dissertação apresentada ao Programa de Pósgraduação em Direito, Faculdade de Ciências Humanas e Soci...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1121.html">Digital Platforms as Rule-Makers: Beyond Business Models to Private Regulation</a></h3>
-          <p>A crescente influência das plataformas digitais na economia global as posiciona como reguladoras pri...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2012</span>
-          <h3><a href="./items/_item_1124.html">A Eficácia dos Contratos na Perspectiva Civil-Contitucional: Um Exame do Princípio da Relatividade no Âmbito das Coligações Contratuais</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1129.html">Direito à Moradia - Jurisprudência Comentada</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/https___repository_nls_ac_in_ijclp_vol10_iss1_2_utm_source_repository_nls_ac_in_2Fijclp_2Fvol10_2Fiss1_2F2_utm_medium_PDF_utm_campaign_PDFCoverPages.html">International Journal on Consumer Law and Practice</a></h3>
-          <p>O crescimento exponencial do comércio eletrônico e a consequente proliferação de plataformas digitai...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1134.html">O PRINCÍPIO DA COOPERAÇÃO E A EXIBIÇÃO DE DOCUMENTO OU COISA NO PROCESSO CIVIL (SEGUNDA PARTE)</a></h3>
-          <p>O Princípio da Cooperação é fundamental para a efetividade do Processo Civil brasileiro, exigindo a ...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2020-09-21</span>
-          <h3><a href="./items/https___ojs_unifor_br_rpen_article_view_10834.html">Tutela da vulnerabilidade contratual nas relações de economia do compartilhamento</a></h3>
-          <p>This article addresses the business model of the so-called sharing economy and its legal impacts, no...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Journal &bull; S/D</span>
-          <h3><a href="./items/urn_issn_2317_2150__201519_8464.html">Pensar - Revista de Ciências Jurídicas</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2023-08-01</span>
-          <h3><a href="./items/https___indexlaw_org_index_php_direitocivil_article_view_9507.html">O RECONHECIMENTO DOS CONTRATOS CONEXOS NO CASO CONCRETO: A PROTEÇÃO DOS DIREITOS HUMANOS NOS NEGÓCIOS JURÍDICOS</a></h3>
-          <p>The article deals with connected contracts in the strict sense and with networked contracts, both in...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Journal &bull; S/D</span>
-          <h3><a href="./items/urn_issn_2526_0243__202526_0243.html">Revista Brasileira de Direito Civil em Perspectiva</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2021</span>
-          <h3><a href="./items/_item_1146.html">A Teoria das Redes Contratuais no Direito Brasileiro: Uma Análise sobre a origem, conceito e consequencias de sua aplicação</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2017-8-9</span>
-          <h3><a href="./items/https___www_teses_usp_br_teses_disponiveis_2_2132_tde_19112020_000421_.html">Redes contratuais com função de distribuição</a></h3>
-          <p>DOI: 10.11606/T.2.2017.tde-19112020-000421...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2022-05-20</span>
-          <h3><a href="./items/https___revistajuridica_tjdft_jus_br_index_php_rdj_article_view_708.html">Ação anulatória de sentença arbitral no Tribunal de Justiça do Distrito Federal e dos Territórios</a></h3>
-          <p>A arbitragem, enquanto exercício de jurisdição privada, possui autonomia, mas não está imune ao cont...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Journal &bull; S/D</span>
-          <h3><a href="./items/urn_issn_2675_9640__202675_9624.html">Revista de Doutrina Jurídica</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 07-06-2017</span>
-          <h3><a href="./items/_item_1150.html">Des. CLÁUDIO DELL ́ORTO</a></h3>
-          <p>A eficácia da arbitragem como meio alternativo de solução de conflitos tem sido crescentemente ameaç...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; 2025-09-02</span>
-          <h3><a href="./items/https___www_tandfonline_com_doi_full_10_1080_13600834_2025_2461958.html">No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws</a></h3>
-          <p>A crescente prevalência de "dark patterns" (padrões obscuros) em interfaces digitais tem sido amplam...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Journal &bull; S/D</span>
-          <h3><a href="./items/urn_issn_1360_0834__201469_8404.html">Information & Communications Technology Law</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2018</span>
-          <h3><a href="./items/_item_1172.html">PARÂMETROS PARA A INTERPRETAÇÃO DO CONTRATO DE SHOPPING  CENTER NO DIREITO BRASILEIRO: atipicidade e coligação contratual.</a></h3>
-          <p>“Esta dissertação apresenta um estudo a respeito da interpretação do contrato de cessão remunerada d...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Thesis &bull; 2024</span>
-          <h3><a href="./items/http___www_theses_fr_2024EHEC0002.html">Essays on Digital Platforms as Private Regulators</a></h3>
-          <p>tex.note+duplicate-1: 2024EHEC0002...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1209.html">ANÁLISE COMPARATIVA DOS EFEITOS JURÍDICOS DAS CLÁUSULAS  ABUSIVAS NOS CONTRATOS CONSUMERITAS NO BRASIL E NA UNIÃO  EUROPÉIA</a></h3>
-          <p>A globalização e a intensificação das relações comerciais expõem os consumidores a um crescente risc...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">ConferenceProceedings &bull; S/D</span>
-          <h3><a href="./items/_item_1211.html">Comissão Europeia - 2021 - Guidance on layering of information</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Book &bull; S/D</span>
-          <h3><a href="./items/_item_1214.html">Joyceane Bezerra de Menezes - 2015 - Os contratos coligados e os princípios da função social e da boa-fé</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Book &bull; 2015</span>
-          <h3><a href="./items/urn_isbn_978_84_92602_86_5.html">I Encontro de Internacionalização do CONPEDI: Atores do desenvolvimento econômico, político e social diante do Direito do século XXI</a></h3>
-          <p>Citation Key: assafim_michel_2015...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; 2002-04</span>
-          <h3><a href="./items/_item_1219.html">Directive 2002/22/EC of the European Parliament and of the Council of 7 March 2002 on universal service and users' rights relating to electronic communications networks and services (Universal Service Directive)</a></h3>
-          <p>Citation Key: eu_directive_2002_22_ec...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2021-04-15</span>
-          <h3><a href="./items/_item_1227.html">MINISTRA NANCY ANDRIGHI</a></h3>
-          <p>A eficácia da sentença arbitral como título executivo judicial e a delimitação temporal para sua con...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1235.html">European Union - 2002 - Directive 2002_22_EC - Universal service and users rights relating to electronic communications netw</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1236.html">European Union - 2005 - Directive 2005_29_EC - Unfair commercial practices</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1237.html">European Union - 2008 - Regulation (EC) No 593_2008 - Rome I - Law applicable to contractual obligations</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1238.html">European Union - 2013 - Regulation (EU) No 524_2013 - ODR for consumer disputes</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1239.html">European Union - 2013 - Regulation (EU) No 524_2013 - ODR for consumer disputes</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1240.html">European Union - 2018 - Directive (EU) 2018_1972 - European Electronic Communications Code</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1241.html">European Union - 2022 - Regulation (EU) 2022_1925 - Digital Markets Act</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Manuscript &bull; 2025</span>
-          <h3><a href="./items/_item_1242.html">Prova comentada TJ RJ</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1243.html">IBET - 2020 - O direito real de habitação na sucessão</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1244.html">IBRADIM - 2025 - Ebook_ Arbitragem e mediação no mercado imobiliário</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1245.html">Juridica International - 2011 - Protection of consumers against unfair jurisdiction and arbitration clauses</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Article &bull; S/D</span>
-          <h3><a href="./items/_item_1246.html">A cooperação no Novo CPC: da armadilha à ética.</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; 21 de setembro de 2022.</span>
-          <h3><a href="./items/_item_1247.html">Parecer ASJUP 3698675 SEI 19.16.2470.0122952/2021-19</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1248.html">Ministério Público do Estado do Rio de Janeiro - 2022 - Ação Civil Pública nº 0853380-60.2022.8.19.0001</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/_item_1249.html">Ministro RICARDO VILLAS BÔAS CUEVA</a></h3>
-          <p>A crescente relevância da arbitragem no Brasil impõe a necessidade de delimitação precisa dos sujeit...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_stj_jus_br_websecstj_cgi_revista_REJ_cgi_ITA_seq_1756850_tipo_0_nreg_201501718079_dt_20181001_formato_PDF_salvar_false.html">MINISTRO MARCO AURÉLIO BELLIZZE</a></h3>
-          <p>A crescente utilização da arbitragem no Brasil levantou questões processuais cruciais sobre a impugn...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1254.html">Tribunal de Justiça da União Europeia - 2006 - Acórdão no processo C-168_05 (Mostaza Claro v Centro Móvil Milenium SL)</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1255.html">Tribunal de Justiça da União Europeia - 2006 - Acórdão no processo C-168_05 (Mostaza Claro v Centro Móvil Milenium SL)_1</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1256.html">Tribunal de Justiça da União Europeia - 2009 - Acórdão no processo C-40_08 (Asturcom Telecomunicaciones)</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Description &bull; S/D</span>
-          <h3><a href="./items/_item_1257.html">Unimar - 2020 - Direito civil_ Teoria geral dos contratos e contratos em espécie</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_migalhas_com_br_arquivos_2024_7_BB00CD00FA098E_sentencaarbitragem2_pdf.html">Juiz de Direito: Dr. GUILHERME DE PAULA NASCENTE NUNES</a></h3>
-          <p>A crescente digitalização das relações contratuais, especialmente em locações residenciais intermedi...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Report &bull; 2008</span>
-          <h3><a href="./items/https___tools_ietf_org_html_rfc5321.html">Simple mail transfer protocol</a></h3>
-          <p>Este documento define a especificação técnica do Protocolo de Transferência de Correio Simples (SMTP...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___support_google_com_a_answer_81126_visit_id_638992407653108749_4044564035_rd_1.html">Diretrizes para remetentes de e-mails - Ajuda do Administrador do Google Workspace</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/_item_1347.html">Código de Defesa do Consumidor não se aplica aos contratos de locação</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___support_google_com_a_answer_81126_visit_id_638992407654655387_3703645839_rd_1.html">Diretrizes para remetentes de e-mails - Ajuda do Administrador do Google Workspace</a></h3>
-          <p></p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; 2023-06-26</span>
-          <h3><a href="./items/https___scon_stj_jus_br_SCON_GetInteiroTeorDoAcordao_num_registro_201902502942_dt_publicacao_28_06_2023.html">MINISTRO HUMBERTO MARTINS</a></h3>
-          <p>A crescente complexidade nas transações imobiliárias e a vinculação de corretores a grandes administ...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___www_conjur_com_br_2023_jul_28_paradoxo_corte_valor_causa_acao_anulatoria_sentenca_arbitral_.html">Consultor Jurídico</a></h3>
-          <p>O artigo 33 da Lei nº 9.307/96, como é sabido, autoriza a parte que sofreu gravame submeter ao contr...</p>
-        </article>
-      
-        <article class="card">
-          <span class="meta">Document &bull; S/D</span>
-          <h3><a href="./items/https___opentimestamps_org_.html">OpenTimestamps: a timestamping proof standard</a></h3>
-          <p>OpenTimestamps aims to be a standard format for blockchain timestamping....</p>
-        </article>
+        <a href="./items/https___www_planalto_gov_br_ccivil_03_leis_l9307_htm.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Legislation &bull; 1996</span>
+              <h3>Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Place: Brasília, DF...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_planalto_gov_br_ccivil_03__ato2015_2018_2015_lei_l13105_htm.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Legislation &bull; 2015</span>
+              <h3>Lei nº 13.105, de 16 de março de 2015. Código de Processo Civil</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_migalhas_com_br_depeso_435468_clausula_arbitral_condicoes_de_eficacia_em_contratos_por_adesao.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2025</span>
+              <h3>Migalhas</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente utilização dos contratos de adesão, caracterizados pela ausência de fase pré-negocial e pela inerente assime...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_stj_jus_br_sites_portalp_Paginas_Comunicacao_Noticias_antigas_2017_2017_03_17_09_38_Codigo_de_Defesa_do_Consumidor_nao_se_aplica_aos_contratos_de_locacao_aspx.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Código de Defesa do Consumidor não se aplica aos contratos de locação</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_stj_jus_br_sites_portalp_Paginas_Comunicacao_Noticias_antigas_2016_2016_10_03_08_06_Terceira_Turma_ve_franquia_como_contrato_de_adesao_e_anula_clausula_de_arbitragem_aspx.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Terceira Turma vê franquia como contrato de adesão e anula cláusula de arbitragem</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_639.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2016</span>
+              <h3>MINISTRA NANCY ANDRIGHI</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Place: Brasília, DF...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_646.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2024</span>
+              <h3>Juíza Larissa Gaspar Tunala</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente digitalização das relações contratuais, especialmente em locações intermediadas por plataformas digitais, te...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___dialnet_unirioja_es_descarga_articulo_6463954_pdf.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2017</span>
+              <h3>Revista de Direito Civil Contemporâneo.</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente utilização da arbitragem em contratos empresariais, especialmente nos de adesão, levanta questões sobre a va...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_670.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2023</span>
+              <h3>A hipervulnerabilidade dos dados dos consumidores no mercado de consumo digital: a autodetermina<span class="nocase">c c a</span>o informativa como um direito fundamental</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Citation Key: Silva2023...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_678.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">BookSection &bull; 2019</span>
+              <h3>Prote<span class="nocase">c c a</span>o de dados pessoais: a fun<span class="nocase">c c a</span>o e os limites do consentimento</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Citation Key: Bioni2019...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___scon_stj_jus_br_SCON_GetInteiroTeorDoAcordao_num_registro_202400310111_dt_publicacao_28_02_2025.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2025</span>
+              <h3>MINISTRO CARLOS CINI MARCHIONATTI DESEMBARGADOR CONVOCADO TJRS)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A controvérsia jurídica sobre a aplicação do Código de Defesa do Consumidor (CDC) aos contratos de locação e a definição...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_684.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2023</span>
+              <h3>MINISTRO RAUL ARAÚJO</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A discussão jurídica sobre a extensão da responsabilidade do fiador em contratos de locação predial urbana prorrogados p...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_689.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2021</span>
+              <h3>MINISTRO MARCO BUZZI</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A controvérsia acerca da aplicabilidade do Código de Defesa do Consumidor (CDC) em litígios contratuais é crucial para a...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_digital_fairness_act_com_.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Digital Fairness Act (DFA) | Updates</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_696.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>L9307</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_698.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>L13105</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_700.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Código de Defesa do Consumidor não se aplica aos contratos de locação</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___scon_stj_jus_br_SCON_pesquisar_jsp_b_ACOR_O_RR_preConsultaPP_5217_2F0_thesaurus_JURIDICO_p_true_tp_T.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>STJ - Jurisprudência do STJ</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                O Superior Tribunal de Justiça é o órgão do Poder Judiciário do Brasil que assegura efetivamente a uniformidade à interp...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___scon_stj_jus_br_SCON_pesquisa_pronta_toc_jsp_livre___DOCN__275217_27_.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>STJ - Pesquisa Pronta</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                O Superior Tribunal de Justiça é o órgão do Poder Judiciário do Brasil que assegura efetivamente a uniformidade à interp...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___site_mppr_mp_br_meioambiente_Pagina_Direito_Moradia_Jurisprudencia_Comentada.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>MPPR</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                &#1...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1104.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>VULNERABILIDADE DIGITAL DO CONSUMIDOR NOS MODELOS ZERO- PRICE: A (I)LEGALIDADE DA CESSÃO IRRESTRITA DE DADOS PESSOAIS NOS TERMOS DE USO DAS REDES SOCIAIS</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente essencialidade das redes sociais para o exercício da cidadania e a promoção de direitos fundamentais no cibe...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1106.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>O PRINCÍPIO DA COOPERAÇÃO COMO NORMA FUNDAMENTAL DO PROCESSO CIVIL E SEUS REFLEXOS NA ARBITRAGEM</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                The understanding and application of the law suffered, over time, significant changes. The ideas post-positivistic sprea...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1108.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2022</span>
+              <h3>civilistica.com</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A expansão do mercado de consumo para o ambiente digital, marcada pela atuação de grandes plataformas e pelo uso intensi...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_isbn_978_1_80037_209_2_20978_1_80037_208_5.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Book &bull; 2022</span>
+              <h3>Regulation (EU) No 910/2014 on Electronic Identification and Trust Services for Electronic Transactions in the Internal Market (EIDAS Regulation)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                DOI: 10.4337/9781800372092.00015...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1117.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>A anulação da sentença arbitral por violação da ordem pública internacional</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A consagração da violação da ordem pública internacional como fundamento de anulação da sentença arbitral no Artigo 46.º...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1119.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2018</span>
+              <h3>O PRINCÍPIO DA CONSERVAÇÃO DO CONTRATO NAS AÇÕES REVISIONAIS  DE CONTRATOS HABITACIONAIS: ANÁLISE DE JULGADOS ENVOLVENDO O  “PROGRAMA MINHA CASA, MINHA VIDA”</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Dissertação apresentada ao Programa de Pósgraduação em Direito, Faculdade de Ciências Humanas e Sociais, Universidade Es...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1121.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>Digital Platforms as Rule-Makers: Beyond Business Models to Private Regulation</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente influência das plataformas digitais na economia global as posiciona como reguladoras privadas, estabelecendo...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1124.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2012</span>
+              <h3>A Eficácia dos Contratos na Perspectiva Civil-Contitucional: Um Exame do Princípio da Relatividade no Âmbito das Coligações Contratuais</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1129.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>Direito à Moradia - Jurisprudência Comentada</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___repository_nls_ac_in_ijclp_vol10_iss1_2_utm_source_repository_nls_ac_in_2Fijclp_2Fvol10_2Fiss1_2F2_utm_medium_PDF_utm_campaign_PDFCoverPages.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>International Journal on Consumer Law and Practice</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                O crescimento exponencial do comércio eletrônico e a consequente proliferação de plataformas digitais, como agregadores ...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1134.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>O PRINCÍPIO DA COOPERAÇÃO E A EXIBIÇÃO DE DOCUMENTO OU COISA NO PROCESSO CIVIL (SEGUNDA PARTE)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                O Princípio da Cooperação é fundamental para a efetividade do Processo Civil brasileiro, exigindo a colaboração de todos...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___ojs_unifor_br_rpen_article_view_10834.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2020</span>
+              <h3>Tutela da vulnerabilidade contratual nas relações de economia do compartilhamento</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                This article addresses the business model of the so-called sharing economy and its legal impacts, notably with regard to...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_issn_2317_2150__201519_8464.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Journal &bull; S/D</span>
+              <h3>Pensar - Revista de Ciências Jurídicas</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___indexlaw_org_index_php_direitocivil_article_view_9507.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2023</span>
+              <h3>O RECONHECIMENTO DOS CONTRATOS CONEXOS NO CASO CONCRETO: A PROTEÇÃO DOS DIREITOS HUMANOS NOS NEGÓCIOS JURÍDICOS</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                The article deals with connected contracts in the strict sense and with networked contracts, both included in the catego...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_issn_2526_0243__202526_0243.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Journal &bull; S/D</span>
+              <h3>Revista Brasileira de Direito Civil em Perspectiva</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1146.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2021</span>
+              <h3>A Teoria das Redes Contratuais no Direito Brasileiro: Uma Análise sobre a origem, conceito e consequencias de sua aplicação</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_teses_usp_br_teses_disponiveis_2_2132_tde_19112020_000421_.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2017</span>
+              <h3>Redes contratuais com função de distribuição</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                DOI: 10.11606/T.2.2017.tde-19112020-000421...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___revistajuridica_tjdft_jus_br_index_php_rdj_article_view_708.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2022</span>
+              <h3>Ação anulatória de sentença arbitral no Tribunal de Justiça do Distrito Federal e dos Territórios</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A arbitragem, enquanto exercício de jurisdição privada, possui autonomia, mas não está imune ao controle estatal, o qual...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_issn_2675_9640__202675_9624.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Journal &bull; S/D</span>
+              <h3>Revista de Doutrina Jurídica</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1150.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 07-0</span>
+              <h3>Des. CLÁUDIO DELL ́ORTO</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A eficácia da arbitragem como meio alternativo de solução de conflitos tem sido crescentemente ameaçada pela utilização ...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_tandfonline_com_doi_full_10_1080_13600834_2025_2461958.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; 2025</span>
+              <h3>No harm no foul: how harms caused by dark patterns are conceptualised and tackled under EU data protection, consumer and competition laws</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente prevalência de "dark patterns" (padrões obscuros) em interfaces digitais tem sido amplamente investigada emp...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_issn_1360_0834__201469_8404.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Journal &bull; S/D</span>
+              <h3>Information & Communications Technology Law</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1172.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2018</span>
+              <h3>PARÂMETROS PARA A INTERPRETAÇÃO DO CONTRATO DE SHOPPING  CENTER NO DIREITO BRASILEIRO: atipicidade e coligação contratual.</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                “Esta dissertação apresenta um estudo a respeito da interpretação do contrato de cessão remunerada de espaço para instal...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/http___www_theses_fr_2024EHEC0002.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Thesis &bull; 2024</span>
+              <h3>Essays on Digital Platforms as Private Regulators</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                tex.note+duplicate-1: 2024EHEC0002...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1209.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>ANÁLISE COMPARATIVA DOS EFEITOS JURÍDICOS DAS CLÁUSULAS  ABUSIVAS NOS CONTRATOS CONSUMERITAS NO BRASIL E NA UNIÃO  EUROPÉIA</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A globalização e a intensificação das relações comerciais expõem os consumidores a um crescente risco de práticas contra...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1211.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">ConferenceProceedings &bull; S/D</span>
+              <h3>Comissão Europeia - 2021 - Guidance on layering of information</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1214.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Book &bull; S/D</span>
+              <h3>Joyceane Bezerra de Menezes - 2015 - Os contratos coligados e os princípios da função social e da boa-fé</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/urn_isbn_978_84_92602_86_5.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Book &bull; 2015</span>
+              <h3>I Encontro de Internacionalização do CONPEDI: Atores do desenvolvimento econômico, político e social diante do Direito do século XXI</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Citation Key: assafim_michel_2015...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1219.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; 2002</span>
+              <h3>Directive 2002/22/EC of the European Parliament and of the Council of 7 March 2002 on universal service and users' rights relating to electronic communications networks and services (Universal Service Directive)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Citation Key: eu_directive_2002_22_ec...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1227.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2021</span>
+              <h3>MINISTRA NANCY ANDRIGHI</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A eficácia da sentença arbitral como título executivo judicial e a delimitação temporal para sua contestação judicial re...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1235.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2002 - Directive 2002_22_EC - Universal service and users rights relating to electronic communications netw</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1236.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2005 - Directive 2005_29_EC - Unfair commercial practices</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1237.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2008 - Regulation (EC) No 593_2008 - Rome I - Law applicable to contractual obligations</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1238.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2013 - Regulation (EU) No 524_2013 - ODR for consumer disputes</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1239.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2013 - Regulation (EU) No 524_2013 - ODR for consumer disputes</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1240.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2018 - Directive (EU) 2018_1972 - European Electronic Communications Code</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1241.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>European Union - 2022 - Regulation (EU) 2022_1925 - Digital Markets Act</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1242.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Manuscript &bull; 2025</span>
+              <h3>Prova comentada TJ RJ</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1243.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>IBET - 2020 - O direito real de habitação na sucessão</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1244.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>IBRADIM - 2025 - Ebook_ Arbitragem e mediação no mercado imobiliário</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1245.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Juridica International - 2011 - Protection of consumers against unfair jurisdiction and arbitration clauses</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1246.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Article &bull; S/D</span>
+              <h3>A cooperação no Novo CPC: da armadilha à ética.</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1247.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; 21 d</span>
+              <h3>Parecer ASJUP 3698675 SEI 19.16.2470.0122952/2021-19</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1248.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Ministério Público do Estado do Rio de Janeiro - 2022 - Ação Civil Pública nº 0853380-60.2022.8.19.0001</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1249.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Ministro RICARDO VILLAS BÔAS CUEVA</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente relevância da arbitragem no Brasil impõe a necessidade de delimitação precisa dos sujeitos processuais em aç...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_stj_jus_br_websecstj_cgi_revista_REJ_cgi_ITA_seq_1756850_tipo_0_nreg_201501718079_dt_20181001_formato_PDF_salvar_false.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>MINISTRO MARCO AURÉLIO BELLIZZE</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente utilização da arbitragem no Brasil levantou questões processuais cruciais sobre a impugnação de decisões int...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1254.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Tribunal de Justiça da União Europeia - 2006 - Acórdão no processo C-168_05 (Mostaza Claro v Centro Móvil Milenium SL)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1255.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Tribunal de Justiça da União Europeia - 2006 - Acórdão no processo C-168_05 (Mostaza Claro v Centro Móvil Milenium SL)_1</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1256.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Tribunal de Justiça da União Europeia - 2009 - Acórdão no processo C-40_08 (Asturcom Telecomunicaciones)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1257.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Description &bull; S/D</span>
+              <h3>Unimar - 2020 - Direito civil_ Teoria geral dos contratos e contratos em espécie</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_migalhas_com_br_arquivos_2024_7_BB00CD00FA098E_sentencaarbitragem2_pdf.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Juiz de Direito: Dr. GUILHERME DE PAULA NASCENTE NUNES</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente digitalização das relações contratuais, especialmente em locações residenciais intermediadas por plataformas...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___tools_ietf_org_html_rfc5321.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Report &bull; 2008</span>
+              <h3>Simple mail transfer protocol</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                Este documento define a especificação técnica do Protocolo de Transferência de Correio Simples (SMTP), consolidando e at...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___support_google_com_a_answer_81126_visit_id_638992407653108749_4044564035_rd_1.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Diretrizes para remetentes de e-mails - Ajuda do Administrador do Google Workspace</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/_item_1347.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Código de Defesa do Consumidor não se aplica aos contratos de locação</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___support_google_com_a_answer_81126_visit_id_638992407654655387_3703645839_rd_1.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Diretrizes para remetentes de e-mails - Ajuda do Administrador do Google Workspace</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___scon_stj_jus_br_SCON_GetInteiroTeorDoAcordao_num_registro_201902502942_dt_publicacao_28_06_2023.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; 2023</span>
+              <h3>MINISTRO HUMBERTO MARTINS</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                A crescente complexidade nas transações imobiliárias e a vinculação de corretores a grandes administradoras levantam que...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___www_conjur_com_br_2023_jul_28_paradoxo_corte_valor_causa_acao_anulatoria_sentenca_arbitral_.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>Consultor Jurídico</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                O artigo 33 da Lei nº 9.307/96, como é sabido, autoriza a parte que sofreu gravame submeter ao controle judicial a sente...
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
+      
+        <a href="./items/https___opentimestamps_org_.html" class="card-link">
+          <article class="card">
+            <div>
+              <span class="meta">Document &bull; S/D</span>
+              <h3>OpenTimestamps: a timestamping proof standard</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                OpenTimestamps aims to be a standard format for blockchain timestamping....
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size: 0.8rem; color: var(--primary);">Ler documento &rarr;</span>
+              
+            </div>
+          </article>
+        </a>
       
     </div>
   
-    </main>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
+    </footer>
   </div>
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+    
+    // Dark Mode Logic
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    }
+    
+    function updateIcon() {
+      const icon = document.getElementById('theme-icon');
+      if(document.body.classList.contains('dark')) {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    updateIcon();
+
+    // Search Logic (Simple client-side)
+    function filterList() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText;
+        if (title.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+
+    // Citation Logic
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Referência ABNT copiada para a área de transferência!');
+      });
+    }
+  </script>
 </body>
 </html>

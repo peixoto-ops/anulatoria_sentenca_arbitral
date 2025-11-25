@@ -3,55 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>International Journal on Consumer Law and Practice | Biblioteca Jurídica</title>
+  <title>International Journal on Consumer Law and Practice | JurisLib</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i data-lucide="moon" id="theme-icon"></i>
+  </button>
+
   <div class="layout">
-    <aside class="sidebar">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="margin:0;">JurisLib</h2>
-        <p style="margin:0; font-size: 0.9rem; color: var(--text-secondary);">Biblioteca Digital</p>
-      </div>
-      <nav>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="../index.html">Início</a></li>
-          <!-- Categories could be generated here -->
-        </ul>
-      </nav>
-      <div style="margin-top: 2rem;">
-         <input type="text" id="search" placeholder="Buscar..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px;">
-      </div>
-    </aside>
-    <main class="content">
-      
+    <div class="main-container">
+      <aside class="sidebar">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
+          <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
+        </div>
+        <nav>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top: 2rem;">
+           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
+        </div>
+      </aside>
+      <main class="content">
+        
       <div class="item-header">
-        <a href="../index.html" style="font-size: 0.9rem;">&larr; Voltar</a>
-        <h1 style="margin-top: 0.5rem;">International Journal on Consumer Law and Practice</h1>
+        <a href="../index.html" style="font-size: 0.9rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+          <i data-lucide="arrow-left" size="16"></i> Voltar para o índice
+        </a>
+        <h1 style="margin-top: 0.5rem; line-height: 1.2;">International Journal on Consumer Law and Practice</h1>
+        
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+           <button onclick="copyCitation('KOZHEMYAKIN, Dmitriy. **International Journal on Consumer Law and Practice**. Disponível em: <
+            
+                https://repository.nls.ac.in/ijclp/vol10/iss1/2?utm_source=repository.nls.ac.in%2Fijclp%2Fvol10%2Fiss1%2F2&utm_medium=PDF&utm_campaign=PDFCoverPages
+            
+        >. Acesso em: 25/11/2025.')" class="btn">
+             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+           </button>
+           
+             <a href="
+            
+                https://repository.nls.ac.in/ijclp/vol10/iss1/2?utm_source=repository.nls.ac.in%2Fijclp%2Fvol10%2Fiss1%2F2&utm_medium=PDF&utm_campaign=PDFCoverPages
+            
+        " target="_blank" class="btn btn-outline">
+               <i data-lucide="external-link" size="16"></i> Ver Fonte Original
+             </a>
+        </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo</div><div>Article</div></div>
+        <div><div class="label">Tipo de Documento</div><div>Article</div></div>
         <div><div class="label">Data</div><div>-</div></div>
-        <div><div class="label">Autores</div><div>Kozhemyakin, Mironova</div></div>
-        <div><div class="label">Fonte</div><div>-</div></div>
+        <div><div class="label">Autores</div><div>Kozhemyakin, Dmitriy, Mironova, Svetlana</div></div>
+        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
       </div>
 
       
-        <div style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-          <h3 style="margin-top: 0;">Resumo / Ementa</h3>
-          <p>O crescimento exponencial do comércio eletrônico e a consequente proliferação de plataformas digitais, como agregadores e marketplaces, geram incertezas regulatórias significativas quanto à responsabilização legal de seus operadores perante os consumidores, notadamente em casos de fornecimento de bens ou serviços defeituosos. Este estudo objetivou analisar os conceitos e características das plataformas digitais e dos agregadores, examinando as abordagens legais atuais para determinar sua responsabilidade civil perante os consumidores em diferentes jurisdições. A metodologia empregada consistiu na análise da doutrina da responsabilidade legal (objetiva e subjetiva) e na revisão de jurisprudências selecionadas nos Estados Unidos, na União Europeia e na Federação Russa, que tratam da aplicação da responsabilidade secundária aos operadores de plataformas. Observou-se que, na ausência de normas específicas, os tribunais aplicam majoritariamente duas abordagens: a objetiva, que equipara o operador ao vendedor direto para impor responsabilidade estrita, e a subjetiva, que se baseia na percepção do consumidor sobre a predominância da plataforma no negócio. Tais abordagens, contudo, carecem de certeza jurídica, resultando em discricionariedade judicial e ignorando a natureza intermediária da atividade. Conclui-se que a solução mais eficaz para garantir a proteção do consumidor reside no desenvolvimento de um tipo especial de responsabilidade para os operadores, fundamentado na doutrina da responsabilidade secundária, notadamente a infração vicária, mediante modificações nas disposições de salvaguarda existentes.
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <p style="margin-top: 1rem; text-align: justify;">O crescimento exponencial do comércio eletrônico e a consequente proliferação de plataformas digitais, como agregadores e marketplaces, geram incertezas regulatórias significativas quanto à responsabilização legal de seus operadores perante os consumidores, notadamente em casos de fornecimento de bens ou serviços defeituosos. Este estudo objetivou analisar os conceitos e características das plataformas digitais e dos agregadores, examinando as abordagens legais atuais para determinar sua responsabilidade civil perante os consumidores em diferentes jurisdições. A metodologia empregada consistiu na análise da doutrina da responsabilidade legal (objetiva e subjetiva) e na revisão de jurisprudências selecionadas nos Estados Unidos, na União Europeia e na Federação Russa, que tratam da aplicação da responsabilidade secundária aos operadores de plataformas. Observou-se que, na ausência de normas específicas, os tribunais aplicam majoritariamente duas abordagens: a objetiva, que equipara o operador ao vendedor direto para impor responsabilidade estrita, e a subjetiva, que se baseia na percepção do consumidor sobre a predominância da plataforma no negócio. Tais abordagens, contudo, carecem de certeza jurídica, resultando em discricionariedade judicial e ignorando a natureza intermediária da atividade. Conclui-se que a solução mais eficaz para garantir a proteção do consumidor reside no desenvolvimento de um tipo especial de responsabilidade para os operadores, fundamentado na doutrina da responsabilidade secundária, notadamente a infração vicária, mediante modificações nas disposições de salvaguarda existentes.
 
 ## **Palavras-chave:** Plataformas Digitais. Responsabilidade Civil. Consumidor. Agregadores. Infração Vicária.</p>
         </div>
       
 
       
+
+      
     
-    </main>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
+    </footer>
   </div>
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+    
+    // Dark Mode Logic
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    }
+    
+    function updateIcon() {
+      const icon = document.getElementById('theme-icon');
+      if(document.body.classList.contains('dark')) {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    updateIcon();
+
+    // Search Logic (Simple client-side)
+    function filterList() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText;
+        if (title.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+
+    // Citation Logic
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Referência ABNT copiada para a área de transferência!');
+      });
+    }
+  </script>
 </body>
 </html>

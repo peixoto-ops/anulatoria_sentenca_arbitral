@@ -3,53 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem | Biblioteca Jurídica</title>
+  <title>Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem | JurisLib</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <i data-lucide="moon" id="theme-icon"></i>
+  </button>
+
   <div class="layout">
-    <aside class="sidebar">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="margin:0;">JurisLib</h2>
-        <p style="margin:0; font-size: 0.9rem; color: var(--text-secondary);">Biblioteca Digital</p>
-      </div>
-      <nav>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="../index.html">Início</a></li>
-          <!-- Categories could be generated here -->
-        </ul>
-      </nav>
-      <div style="margin-top: 2rem;">
-         <input type="text" id="search" placeholder="Buscar..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px;">
-      </div>
-    </aside>
-    <main class="content">
-      
+    <div class="main-container">
+      <aside class="sidebar">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
+          <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
+        </div>
+        <nav>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
+          </ul>
+        </nav>
+        <div style="margin-top: 2rem;">
+           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
+        </div>
+      </aside>
+      <main class="content">
+        
       <div class="item-header">
-        <a href="../index.html" style="font-size: 0.9rem;">&larr; Voltar</a>
-        <h1 style="margin-top: 0.5rem;">Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem</h1>
+        <a href="../index.html" style="font-size: 0.9rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+          <i data-lucide="arrow-left" size="16"></i> Voltar para o índice
+        </a>
+        <h1 style="margin-top: 0.5rem; line-height: 1.2;">Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem</h1>
+        
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+           <button onclick="copyCitation('BRASIL. **Lei nº 9.307, de 23 de setembro de 1996. Lei de arbitragem**. 1996. Disponível em: <
+            
+                https://www.planalto.gov.br/ccivil_03/leis/l9307.htm
+            
+        >. Acesso em: 25/11/2025.')" class="btn">
+             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+           </button>
+           
+             <a href="
+            
+                https://www.planalto.gov.br/ccivil_03/leis/l9307.htm
+            
+        " target="_blank" class="btn btn-outline">
+               <i data-lucide="external-link" size="16"></i> Ver Fonte Original
+             </a>
+        </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo</div><div>Legislation</div></div>
+        <div><div class="label">Tipo de Documento</div><div>Legislation</div></div>
         <div><div class="label">Data</div><div>1996-09-24</div></div>
         <div><div class="label">Autores</div><div>Brasil</div></div>
-        <div><div class="label">Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
       </div>
 
       
-        <div style="background: #fff; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-          <h3 style="margin-top: 0;">Resumo / Ementa</h3>
-          <p>Place: Brasília, DF</p>
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <p style="margin-top: 1rem; text-align: justify;">Place: Brasília, DF</p>
         </div>
       
 
       
+
+      
     
-    </main>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
+    </footer>
   </div>
-  <script>lucide.createIcons();</script>
+
+  <script>
+    lucide.createIcons();
+    
+    // Dark Mode Logic
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    }
+    
+    function updateIcon() {
+      const icon = document.getElementById('theme-icon');
+      if(document.body.classList.contains('dark')) {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    updateIcon();
+
+    // Search Logic (Simple client-side)
+    function filterList() {
+      const input = document.getElementById('search');
+      const filter = input.value.toLowerCase();
+      const cards = document.getElementsByClassName('card');
+      
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText;
+        if (title.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+
+    // Citation Logic
+    function copyCitation(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Referência ABNT copiada para a área de transferência!');
+      });
+    }
+  </script>
 </body>
 </html>
