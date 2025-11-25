@@ -12,7 +12,6 @@
   <!-- PDF.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    // Configurar o Worker IMEDIATAMENTE após carregar a lib, não esperar o window.onload
     if (window.pdfjsLib) {
       window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
@@ -31,7 +30,7 @@
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
         
-        <!-- Curator Info -->
+        <!-- Curator Info (Positioned at Top) -->
         <div class="curator-card">
           <div class="curator-text">
             <strong>Curadoria do conteúdo</strong><br/>
@@ -65,7 +64,8 @@
         <h1 style="margin-top: 0.5rem; line-height: 1.2;">A anulação da sentença arbitral por violação da ordem pública internacional</h1>
         
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-           <button onclick="copyCitation('PAIXÃO, Íris Maria Pereira. **A anulação da sentença arbitral por violação da ordem pública internacional**. Acesso em: 25/11/2025.')" class="btn">
+           <!-- Safe Citation Button using data attribute -->
+           <button data-citation="PAIXÃO, Íris Maria Pereira. **A anulação da sentença arbitral por violação da ordem pública internacional**. Acesso em: 25/11/2025." onclick="copyCitation(this.getAttribute('data-citation'))" class="btn">
              <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
@@ -134,10 +134,14 @@
       }
     }
 
-    // Citation Logic
+    // Citation Logic (Safe Version)
     function copyCitation(text) {
+      if(!text) return;
       navigator.clipboard.writeText(text).then(() => {
         alert('Referência ABNT copiada para a área de transferência!');
+      }).catch(err => {
+        console.error('Erro ao copiar', err);
+        prompt("Copie manualmente:", text);
       });
     }
 
