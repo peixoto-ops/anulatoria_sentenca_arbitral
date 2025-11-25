@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Initialize PDF.js Worker
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
@@ -20,16 +27,32 @@
           <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
+        
+        <!-- Curator Info Moved Here -->
+        <div class="curator-card">
+          <div class="curator-text">
+            <strong>Curadoria do conteúdo</strong><br/>
+            Luiz Peixoto de Siqueira Filho<br/>
+            <span style="font-size:0.75rem; opacity:0.8">OABRJ 94719</span>
+          </div>
+        </div>
+
+        <div class="search-container">
+           <label style="font-size: 0.7rem; font-weight:bold; color:var(--text-secondary); text-transform:uppercase;">Filtrar Acervo</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Buscar por título..." class="search-input">
+        </div>
+
         <nav>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
           </ul>
         </nav>
-        <div style="margin-top: 2rem;">
-           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
-           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
-        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 JurisLib</p>
+        </footer>
       </aside>
+
       <main class="content">
         
       <div class="item-header">
@@ -40,22 +63,21 @@
         
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
            <button onclick="copyCitation('MADHULIKA, Kaul. **Digital Platforms as Rule-Makers: Beyond Business Models to Private Regulation**. Acesso em: 25/11/2025.')" class="btn">
-             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+             <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
         </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo de Documento</div><div>Article</div></div>
         <div><div class="label">Data</div><div>-</div></div>
         <div><div class="label">Autores</div><div>Madhulika, Kaul</div></div>
-        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação</div><div>-</div></div>
       </div>
 
       
         <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo</h3>
           <p style="margin-top: 1rem; text-align: justify;">A crescente influência das plataformas digitais na economia global as posiciona como reguladoras privadas, estabelecendo normas que transcendem seus modelos de negócios e levantam questões críticas sobre as consequências diretas e não intencionais de suas escolhas normativas sobre indivíduos, empresas e organizações sociais. Este estudo objetivou desenvolver um arcabouço teórico para delinear aspectos da função regulatória privada das plataformas e avaliar empiricamente o impacto de suas decisões sobre diversos stakeholders. A metodologia combinou o desenvolvimento teórico, baseado em pesquisas sobre "regras como instituições", com dois estudos empíricos que empregaram um desenho de pesquisa de diferenças em diferenças espacial. Os estudos analisaram dados observacionais em larga escala (mais de um milhão de anúncios do Airbnb em Paris) focando na conformidade com a lei francesa ELAN de 2016, que restringe aluguéis de curta duração. Os resultados indicaram que, embora a fiscalização voluntária das plataformas aumente a conformidade regulatória dos complementadores nas áreas monitoradas, o multihoming entre plataformas concorrentes é utilizado como estratégia para evasão das regras. Além disso, a aplicação das regras gerou a consequência não intencional da profissionalização da gestão de propriedades, desfavorecendo anfitriões individuais, e demonstrou que as regras das plataformas restringem a capacidade das organizações de movimentos sociais de mobilizarem recursos. Conclui-se que as ações normativas das plataformas, embora motivadas por efeitos de rede, possuem implicações não mercadológicas profundas, mediando a conformidade regulatória e o ambiente de organização da ação coletiva, exigindo uma reavaliação do seu papel na governança social.
 
 ## **Palavras-chave:** Plataformas Digitais. Regulação Privada. Conformidade Regulatória. Multihoming. Movimentos Sociais.</p>
@@ -63,14 +85,9 @@
       
 
       
-
-      
     
       </main>
     </div>
-    <footer class="footer">
-      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
-    </footer>
   </div>
 
   <script>
@@ -94,25 +111,22 @@
       lucide.createIcons();
     }
 
-    // Initialize Theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (savedTheme === 'dark') document.body.classList.add('dark');
     updateIcon();
 
-    // Search Logic (Simple client-side)
+    // Search Logic
     function filterList() {
       const input = document.getElementById('search');
+      if(!input) return; // Only on index
       const filter = input.value.toLowerCase();
       const cards = document.getElementsByClassName('card');
-      
       for (let i = 0; i < cards.length; i++) {
         const title = cards[i].querySelector('h3').innerText;
         if (title.toLowerCase().indexOf(filter) > -1) {
-          cards[i].style.display = "";
+          cards[i].parentElement.style.display = "";
         } else {
-          cards[i].style.display = "none";
+          cards[i].parentElement.style.display = "none";
         }
       }
     }
@@ -123,6 +137,8 @@
         alert('Referência ABNT copiada para a área de transferência!');
       });
     }
+
+    
   </script>
 </body>
 </html>

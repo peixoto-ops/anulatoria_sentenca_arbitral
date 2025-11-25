@@ -4,7 +4,7 @@
   --surface-color: #ffffff;
   --text-primary: #222222;
   --text-secondary: #555555;
-  --primary: #63452c;
+  --primary: #a51d2d;
   --secondary: #b38b59;
   --border: #e5e7eb;
   --font-title: "Inter", "Montserrat", sans-serif;
@@ -17,7 +17,7 @@ body.dark {
   --surface-color: #1e1e1e;
   --text-primary: #e0e0e0;
   --text-secondary: #a0a0a0;
-  --primary: #4a80b8; /* Lighter blue for dark mode */
+  --primary: #4a80b8;
   --secondary: #d4a76a;
   --border: #333333;
   --shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -43,18 +43,48 @@ a:hover { color: var(--secondary); }
 
 /* Sidebar */
 .sidebar { 
-  width: 280px; 
+  width: 300px; 
   padding: 2rem; 
   background: var(--surface-color); 
   border-right: 1px solid var(--border); 
-  height: calc(100vh - 60px); 
+  height: 100vh; 
   position: sticky; 
   top: 0; 
   overflow-y: auto;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.content { flex: 1; padding: 2rem 3rem; max-width: 100%; }
+.content { flex: 1; padding: 2rem 3rem; max-width: 100%; overflow-x: hidden; }
+
+/* Curator Card */
+.curator-card {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-color);
+  border-left: 3px solid var(--secondary);
+  border-radius: 4px;
+}
+.curator-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-title);
+  line-height: 1.4;
+}
+
+/* Search Box */
+.search-container { margin-bottom: 2rem; }
+.search-input {
+  width: 100%; 
+  padding: 0.8rem; 
+  background: var(--bg-color); 
+  border: 1px solid var(--border); 
+  color: var(--text-primary); 
+  border-radius: 4px;
+  font-family: var(--font-title);
+}
 
 /* Cards */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -73,7 +103,6 @@ a:hover { color: var(--secondary); }
 .card:hover { transform: translateY(-3px); }
 .card h3 { margin-top: 0; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .card-link { color: inherit; text-decoration: none; display: block; height: 100%; }
-
 .meta { font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.5rem; font-family: var(--font-title); text-transform: uppercase; letter-spacing: 0.5px; }
 
 /* Item Page */
@@ -108,28 +137,61 @@ a:hover { color: var(--secondary); }
 .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary) !important; }
 .btn-outline:hover { background: var(--primary); color: #fff !important; }
 
-/* Viewer */
+/* PDF Viewer */
 .viewer-container {
   margin-top: 2rem;
-  background: var(--surface-color);
+  background: #525659; /* Standard PDF viewer bg */
   padding: 1rem;
   border-radius: 6px;
   box-shadow: var(--shadow);
+  color: white;
 }
-.viewer-frame { width: 100%; height: 800px; border: none; background: #eee; }
+.pdf-toolbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: #333;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.pdf-toolbar button {
+  background: #444;
+  border: 1px solid #666;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pdf-toolbar button:hover { background: #555; }
+.pdf-toolbar span { font-size: 0.9rem; font-family: sans-serif; }
+
+.canvas-wrapper {
+  overflow: auto;
+  text-align: center;
+  max-height: 800px;
+  background: #525659;
+}
+#the-canvas {
+  direction: ltr;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
 
 /* Footer */
 .footer { 
-  padding: 2rem; 
+  margin-top: auto;
+  padding-top: 2rem;
   text-align: center; 
   color: var(--text-secondary); 
-  font-size: 0.9rem; 
+  font-size: 0.8rem; 
   border-top: 1px solid var(--border); 
-  background: var(--surface-color);
-  margin-top: auto;
 }
 
-/* Utils */
+/* Theme Toggle */
 .theme-toggle {
   position: fixed;
   top: 1rem;
@@ -146,6 +208,6 @@ a:hover { color: var(--secondary); }
 
 @media (max-width: 768px) {
   .main-container { flex-direction: column; }
-  .sidebar { width: 100%; height: auto; position: static; }
+  .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
   .content { padding: 1.5rem; }
 }

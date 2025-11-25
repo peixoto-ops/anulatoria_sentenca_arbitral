@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Initialize PDF.js Worker
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
@@ -20,16 +27,32 @@
           <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
+        
+        <!-- Curator Info Moved Here -->
+        <div class="curator-card">
+          <div class="curator-text">
+            <strong>Curadoria do conteúdo</strong><br/>
+            Luiz Peixoto de Siqueira Filho<br/>
+            <span style="font-size:0.75rem; opacity:0.8">OABRJ 94719</span>
+          </div>
+        </div>
+
+        <div class="search-container">
+           <label style="font-size: 0.7rem; font-weight:bold; color:var(--text-secondary); text-transform:uppercase;">Filtrar Acervo</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Buscar por título..." class="search-input">
+        </div>
+
         <nav>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
           </ul>
         </nav>
-        <div style="margin-top: 2rem;">
-           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
-           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
-        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 JurisLib</p>
+        </footer>
       </aside>
+
       <main class="content">
         
       <div class="item-header">
@@ -40,20 +63,17 @@
         
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
            <button onclick="copyCitation('AUTOR DESCONHECIDO. **Ministério Público do Estado do Rio de Janeiro - 2022 - Ação Civil Pública nº 0853380-60.2022.8.19.0001**. Acesso em: 25/11/2025.')" class="btn">
-             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+             <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
         </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo de Documento</div><div>Description</div></div>
         <div><div class="label">Data</div><div>-</div></div>
         <div><div class="label">Autores</div><div>-</div></div>
-        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação</div><div>-</div></div>
       </div>
-
-      
 
       
 
@@ -61,9 +81,6 @@
     
       </main>
     </div>
-    <footer class="footer">
-      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
-    </footer>
   </div>
 
   <script>
@@ -87,25 +104,22 @@
       lucide.createIcons();
     }
 
-    // Initialize Theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (savedTheme === 'dark') document.body.classList.add('dark');
     updateIcon();
 
-    // Search Logic (Simple client-side)
+    // Search Logic
     function filterList() {
       const input = document.getElementById('search');
+      if(!input) return; // Only on index
       const filter = input.value.toLowerCase();
       const cards = document.getElementsByClassName('card');
-      
       for (let i = 0; i < cards.length; i++) {
         const title = cards[i].querySelector('h3').innerText;
         if (title.toLowerCase().indexOf(filter) > -1) {
-          cards[i].style.display = "";
+          cards[i].parentElement.style.display = "";
         } else {
-          cards[i].style.display = "none";
+          cards[i].parentElement.style.display = "none";
         }
       }
     }
@@ -116,6 +130,8 @@
         alert('Referência ABNT copiada para a área de transferência!');
       });
     }
+
+    
   </script>
 </body>
 </html>

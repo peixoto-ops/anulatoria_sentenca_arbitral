@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Initialize PDF.js Worker
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
@@ -20,16 +27,32 @@
           <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
+        
+        <!-- Curator Info Moved Here -->
+        <div class="curator-card">
+          <div class="curator-text">
+            <strong>Curadoria do conteúdo</strong><br/>
+            Luiz Peixoto de Siqueira Filho<br/>
+            <span style="font-size:0.75rem; opacity:0.8">OABRJ 94719</span>
+          </div>
+        </div>
+
+        <div class="search-container">
+           <label style="font-size: 0.7rem; font-weight:bold; color:var(--text-secondary); text-transform:uppercase;">Filtrar Acervo</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Buscar por título..." class="search-input">
+        </div>
+
         <nav>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
           </ul>
         </nav>
-        <div style="margin-top: 2rem;">
-           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
-           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
-        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 JurisLib</p>
+        </footer>
       </aside>
+
       <main class="content">
         
       <div class="item-header">
@@ -40,22 +63,21 @@
         
         <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
            <button onclick="copyCitation('BUZZI, Marco. **MINISTRO MARCO BUZZI**. 2021. Acesso em: 25/11/2025.')" class="btn">
-             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+             <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
         </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo de Documento</div><div>Document</div></div>
         <div><div class="label">Data</div><div>2021-06-08</div></div>
         <div><div class="label">Autores</div><div>Buzzi, Marco</div></div>
-        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação</div><div>-</div></div>
       </div>
 
       
         <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo</h3>
           <p style="margin-top: 1rem; text-align: justify;">A controvérsia acerca da aplicabilidade do Código de Defesa do Consumidor (CDC) em litígios contratuais é crucial para a determinação da competência jurisdicional, especialmente em casos que envolvem a definição do destinatário final do produto. Este trabalho objetivou analisar a aplicação da Teoria Finalista pelo Superior Tribunal de Justiça (STJ) na caracterização de relações de consumo e suas implicações processuais. A metodologia empregada baseou-se na análise de um Agravo Interno em Recurso Especial (AREsp), no qual a Quarta Turma do STJ examinou a validade de uma decisão que fixou a competência com base nas regras consumeristas. Verificou-se que a aquisição de telhas coloniais para emprego em imóveis próprios, com o consequente exaurimento da função econômica do bem, foi considerada suficiente para caracterizar a parte adquirente como destinatário final. O colegiado, por unanimidade, negou provimento ao agravo, confirmando a incidência do CDC e a prerrogativa do consumidor de escolher o foro mais favorável. Conclui-se que o julgamento reforça a prevalência da Teoria Finalista Aprofundada na jurisprudência do STJ, consolidando a proteção processual do consumidor mesmo em situações limítrofes, desde que comprovado o uso final do bem fora da cadeia produtiva.
 
 Palavras-chave: Código de Defesa do Consumidor. Teoria Finalista. Competência Jurisdicional. Relação de Consumo. Superior Tribunal de Justiça.</p>
@@ -63,14 +85,9 @@ Palavras-chave: Código de Defesa do Consumidor. Teoria Finalista. Competência 
       
 
       
-
-      
     
       </main>
     </div>
-    <footer class="footer">
-      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
-    </footer>
   </div>
 
   <script>
@@ -94,25 +111,22 @@ Palavras-chave: Código de Defesa do Consumidor. Teoria Finalista. Competência 
       lucide.createIcons();
     }
 
-    // Initialize Theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (savedTheme === 'dark') document.body.classList.add('dark');
     updateIcon();
 
-    // Search Logic (Simple client-side)
+    // Search Logic
     function filterList() {
       const input = document.getElementById('search');
+      if(!input) return; // Only on index
       const filter = input.value.toLowerCase();
       const cards = document.getElementsByClassName('card');
-      
       for (let i = 0; i < cards.length; i++) {
         const title = cards[i].querySelector('h3').innerText;
         if (title.toLowerCase().indexOf(filter) > -1) {
-          cards[i].style.display = "";
+          cards[i].parentElement.style.display = "";
         } else {
-          cards[i].style.display = "none";
+          cards[i].parentElement.style.display = "none";
         }
       }
     }
@@ -123,6 +137,8 @@ Palavras-chave: Código de Defesa do Consumidor. Teoria Finalista. Competência 
         alert('Referência ABNT copiada para a área de transferência!');
       });
     }
+
+    
   </script>
 </body>
 </html>

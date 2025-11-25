@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Initialize PDF.js Worker
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
@@ -20,16 +27,32 @@
           <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
+        
+        <!-- Curator Info Moved Here -->
+        <div class="curator-card">
+          <div class="curator-text">
+            <strong>Curadoria do conteúdo</strong><br/>
+            Luiz Peixoto de Siqueira Filho<br/>
+            <span style="font-size:0.75rem; opacity:0.8">OABRJ 94719</span>
+          </div>
+        </div>
+
+        <div class="search-container">
+           <label style="font-size: 0.7rem; font-weight:bold; color:var(--text-secondary); text-transform:uppercase;">Filtrar Acervo</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Buscar por título..." class="search-input">
+        </div>
+
         <nav>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
           </ul>
         </nav>
-        <div style="margin-top: 2rem;">
-           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
-           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
-        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 JurisLib</p>
+        </footer>
       </aside>
+
       <main class="content">
         
       <div class="item-header">
@@ -44,7 +67,7 @@
                 https://www.stj.jus.br/websecstj/cgi/revista/REJ.cgi/ITA?seq=1756850&tipo=0&nreg=201501718079&dt=20181001&formato=PDF&salvar=false
             
         >. Acesso em: 25/11/2025.')" class="btn">
-             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+             <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
              <a href="
@@ -52,21 +75,20 @@
                 https://www.stj.jus.br/websecstj/cgi/revista/REJ.cgi/ITA?seq=1756850&tipo=0&nreg=201501718079&dt=20181001&formato=PDF&salvar=false
             
         " target="_blank" class="btn btn-outline">
-               <i data-lucide="external-link" size="16"></i> Ver Fonte Original
+               <i data-lucide="external-link" size="16"></i> Link Fonte
              </a>
         </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo de Documento</div><div>Document</div></div>
         <div><div class="label">Data</div><div>-</div></div>
         <div><div class="label">Autores</div><div>-</div></div>
-        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação</div><div>-</div></div>
       </div>
 
       
         <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo</h3>
           <p style="margin-top: 1rem; text-align: justify;">A crescente utilização da arbitragem no Brasil levantou questões processuais cruciais sobre a impugnação de decisões interlocutórias com caráter terminativo, notadamente a sentença arbitral parcial, cuja admissibilidade e regime recursal eram controversos antes da Lei n. 13.129/2015. Este estudo objetivou definir o cabimento imediato da ação anulatória prevista no Artigo 33 da Lei n. 9.307/1996 contra a sentença arbitral parcial, em contraposição ao entendimento de que a impugnação deveria aguardar a prolação da sentença final. A metodologia empregada consistiu na análise hermenêutica do sistema arbitral brasileiro, em harmonia com as reformas do Código de Processo Civil de 1973 (Lei n. 11.232/2005) e com o suporte da doutrina especializada. Os resultados demonstraram a absoluta admissibilidade da sentença parcial no procedimento arbitral, compreendida como o ato que resolve definitivamente parte da causa (gênero do qual a sentença final é espécie), sendo apta à formação da coisa julgada. Consequentemente, a ação anulatória deve ser intentada de imediato, no prazo decadencial de 90 dias, sob pena de a questão decidida tornar-se imutável. Conclui-se que a possibilidade de impugnação imediata da sentença parcial arbitral é inerente à sua natureza e aos princípios de celeridade e segurança jurídica que regem a arbitragem, consolidando a autonomia do procedimento.
 
 Palavras-chave: Arbitragem. Sentença Parcial. Ação Anulatória. Prazo Decadencial. Lei 9.307/96.</p>
@@ -74,14 +96,9 @@ Palavras-chave: Arbitragem. Sentença Parcial. Ação Anulatória. Prazo Decaden
       
 
       
-
-      
     
       </main>
     </div>
-    <footer class="footer">
-      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
-    </footer>
   </div>
 
   <script>
@@ -105,25 +122,22 @@ Palavras-chave: Arbitragem. Sentença Parcial. Ação Anulatória. Prazo Decaden
       lucide.createIcons();
     }
 
-    // Initialize Theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (savedTheme === 'dark') document.body.classList.add('dark');
     updateIcon();
 
-    // Search Logic (Simple client-side)
+    // Search Logic
     function filterList() {
       const input = document.getElementById('search');
+      if(!input) return; // Only on index
       const filter = input.value.toLowerCase();
       const cards = document.getElementsByClassName('card');
-      
       for (let i = 0; i < cards.length; i++) {
         const title = cards[i].querySelector('h3').innerText;
         if (title.toLowerCase().indexOf(filter) > -1) {
-          cards[i].style.display = "";
+          cards[i].parentElement.style.display = "";
         } else {
-          cards[i].style.display = "none";
+          cards[i].parentElement.style.display = "none";
         }
       }
     }
@@ -134,6 +148,8 @@ Palavras-chave: Arbitragem. Sentença Parcial. Ação Anulatória. Prazo Decaden
         alert('Referência ABNT copiada para a área de transferência!');
       });
     }
+
+    
   </script>
 </body>
 </html>

@@ -7,6 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    // Initialize PDF.js Worker
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
@@ -20,16 +27,32 @@
           <h2 style="margin:0; font-family: 'Source Serif Pro', serif;">JurisLib</h2>
           <p style="margin:0; font-size: 0.85rem; color: var(--text-secondary);">Acervo Jurídico Digital</p>
         </div>
+        
+        <!-- Curator Info Moved Here -->
+        <div class="curator-card">
+          <div class="curator-text">
+            <strong>Curadoria do conteúdo</strong><br/>
+            Luiz Peixoto de Siqueira Filho<br/>
+            <span style="font-size:0.75rem; opacity:0.8">OABRJ 94719</span>
+          </div>
+        </div>
+
+        <div class="search-container">
+           <label style="font-size: 0.7rem; font-weight:bold; color:var(--text-secondary); text-transform:uppercase;">Filtrar Acervo</label>
+           <input type="text" id="search" onkeyup="filterList()" placeholder="Buscar por título..." class="search-input">
+        </div>
+
         <nav>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.5rem;"><a href="../index.html" class="btn-outline" style="border:none; padding:0; display:flex; gap:0.5rem;"><i data-lucide="home" size="16"></i> Início</a></li>
           </ul>
         </nav>
-        <div style="margin-top: 2rem;">
-           <label style="font-size: 0.8rem; font-weight:bold; color:var(--text-secondary)">BUSCA RÁPIDA</label>
-           <input type="text" id="search" onkeyup="filterList()" placeholder="Filtrar títulos..." style="width: 100%; padding: 0.6rem; margin-top:0.5rem; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px;">
-        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 JurisLib</p>
+        </footer>
       </aside>
+
       <main class="content">
         
       <div class="item-header">
@@ -44,7 +67,7 @@
                 https://www.migalhas.com.br/arquivos/2024/7/BB00CD00FA098E_sentencaarbitragem2.pdf
             
         >. Acesso em: 25/11/2025.')" class="btn">
-             <i data-lucide="quote" size="16"></i> Citar (ABNT)
+             <i data-lucide="quote" size="16"></i> Copiar Citação (ABNT)
            </button>
            
              <a href="
@@ -52,21 +75,20 @@
                 https://www.migalhas.com.br/arquivos/2024/7/BB00CD00FA098E_sentencaarbitragem2.pdf
             
         " target="_blank" class="btn btn-outline">
-               <i data-lucide="external-link" size="16"></i> Ver Fonte Original
+               <i data-lucide="external-link" size="16"></i> Link Fonte
              </a>
         </div>
       </div>
       
       <div class="item-meta-grid">
-        <div><div class="label">Tipo de Documento</div><div>Document</div></div>
         <div><div class="label">Data</div><div>-</div></div>
         <div><div class="label">Autores</div><div>-</div></div>
-        <div><div class="label">Publicação/Fonte</div><div>-</div></div>
+        <div><div class="label">Publicação</div><div>-</div></div>
       </div>
 
       
         <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo / Ementa</h3>
+          <h3 style="font-size: 1.1rem; color: var(--text-secondary); border-bottom: 2px solid var(--secondary); display:inline-block; padding-bottom:0.2rem;">Resumo</h3>
           <p style="margin-top: 1rem; text-align: justify;">A crescente digitalização das relações contratuais, especialmente em locações residenciais intermediadas por plataformas tecnológicas, levanta questões críticas sobre a aplicabilidade do Código de Defesa do Consumidor (CDC) e a validade de cláusulas compromissórias arbitrais compulsórias. O presente julgado objetivou analisar a validade e a competência jurisdicional para o cumprimento de uma sentença arbitral de despejo oriunda de um contrato de locação mediado por plataforma digital. A análise foi conduzida por meio da apreciação de um cumprimento de sentença arbitral perante a Justiça Estadual de São Paulo, utilizando a hermenêutica jurídica para avaliar a natureza da relação contratual e a jurisprudência consolidada do Superior Tribunal de Justiça (STJ). Constatou-se que o protagonismo da plataforma de intermediação confere ao locatário a vulnerabilidade típica das relações de consumo, tornando nula a cláusula arbitral compulsória, conforme o Art. 51, VII, do CDC. Adicionalmente, o tribunal reconheceu que, em virtude de sua natureza executiva *lato sensu*, a ação de despejo exige a competência exclusiva do juízo togado, independentemente da convenção arbitral. Em decorrência, a impugnação foi acolhida e a sentença arbitral declarada nula. Conclui-se que a intervenção do Poder Judiciário é reafirmada tanto para proteger o polo vulnerável nas locações mediadas por tecnologia quanto para garantir a execução de medidas coercitivas inerentes às ações de despejo.
 
 ## **Palavras-chave:** Arbitragem. Locação. Código de Defesa do Consumidor. Cláusula Arbitral. Despejo.</p>
@@ -74,14 +96,9 @@
       
 
       
-
-      
     
       </main>
     </div>
-    <footer class="footer">
-      <p>Curadoria do conteúdo Luiz Peixoto de Siqueira Filho - OABRJ 94719</p>
-    </footer>
   </div>
 
   <script>
@@ -105,25 +122,22 @@
       lucide.createIcons();
     }
 
-    // Initialize Theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+    if (savedTheme === 'dark') document.body.classList.add('dark');
     updateIcon();
 
-    // Search Logic (Simple client-side)
+    // Search Logic
     function filterList() {
       const input = document.getElementById('search');
+      if(!input) return; // Only on index
       const filter = input.value.toLowerCase();
       const cards = document.getElementsByClassName('card');
-      
       for (let i = 0; i < cards.length; i++) {
         const title = cards[i].querySelector('h3').innerText;
         if (title.toLowerCase().indexOf(filter) > -1) {
-          cards[i].style.display = "";
+          cards[i].parentElement.style.display = "";
         } else {
-          cards[i].style.display = "none";
+          cards[i].parentElement.style.display = "none";
         }
       }
     }
@@ -134,6 +148,8 @@
         alert('Referência ABNT copiada para a área de transferência!');
       });
     }
+
+    
   </script>
 </body>
 </html>
